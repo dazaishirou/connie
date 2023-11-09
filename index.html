@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - A Pen by Cristhian Rocha</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Inconsolata:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900" rel="stylesheet">
+
+    <script src="/path/to/jquery.masonry.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.navee a').click(function() {
+                var tabId = $(this).attr('data-tab');
+
+                $('.navee a').removeClass('active');
+                $('.Tabcondent').removeClass('active');
+
+                $(this).addClass('active');
+                $('#' + tabId).addClass('active');
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        var ang = 0;
+        $("#prev").click(function() {
+            ang = ang + 22.5;
+            $("*").css("--ang", ang);
+        });
+
+        $("#next").click(function() {
+            ang = ang - 22.5;
+            $("*").css("--ang", ang);
+        });
+    </script>
+
+    <script type="text/javascript">
+        var qTipTag = "a,label,input,title,img";
+        var qTipX = 0;
+        var qTipY = 15;
+        tooltip = {
+            name: "qTip",
+            offsetX: qTipX,
+            offsetY: qTipY,
+            tip: null
+        }
+
+        tooltip.init = function() {
+            var tipNameSpaceURI = "http://www.w3.org/1999/xhtml";
+            if (!tipContainerID) {
+                var tipContainerID = "qTip";
+            }
+            var tipContainer = document.getElementById(tipContainerID);
+
+            if (!tipContainer) {
+                tipContainer = document.createElementNS ? document.createElementNS(tipNameSpaceURI, "div") : document.createElement("div");
+                tipContainer.setAttribute("id", tipContainerID);
+                document.getElementsByTagName("body").item(0).appendChild(tipContainer);
+            }
+
+            if (!document.getElementById) return;
+            this.tip = document.getElementById(this.name);
+            if (this.tip) document.onmousemove = function(evt) {
+                tooltip.move(evt)
+            };
+
+            var a, sTitle, elements;
+
+            var elementList = qTipTag.split(",");
+            for (var j = 0; j < elementList.length; j++) {
+                elements = document.getElementsByTagName(elementList[j]);
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        a = elements[i];
+                        sTitle = a.getAttribute("title");
+                        if (sTitle) {
+                            a.setAttribute("tiptitle", sTitle);
+                            a.removeAttribute("title");
+                            a.removeAttribute("alt");
+                            a.onmouseover = function() {
+                                tooltip.show(this.getAttribute('tiptitle'))
+                            };
+                            a.onmouseout = function() {
+                                tooltip.hide()
+                            };
+                        }
+                    }
+                }
+            }
+        }
+
+        tooltip.move = function(evt) {
+            var x = 0,
+                y = 0;
+            if (document.all) { //IE
+                x = (document.documentElement && document.documentElement.scrollLeft) ? document.documentElement.scrollLeft : document.body.scrollLeft;
+                y = (document.documentElement && document.documentElement.scrollTop) ? document.documentElement.scrollTop : document.body.scrollTop;
+                x += window.event.clientX;
+                y += window.event.clientY;
+
+            } else { //Good Browsers
+                x = evt.pageX;
+                y = evt.pageY;
+            }
+            this.tip.style.left = (x + this.offsetX) + "px";
+            this.tip.style.top = (y + this.offsetY) + "px";
+        }
+
+        tooltip.show = function(text) {
+            if (!this.tip) return;
+            this.tip.innerHTML = text;
+            this.tip.style.display = "block";
+        }
+
+        tooltip.hide = function() {
+            if (!this.tip) return;
+            this.tip.innerHTML = "";
+            this.tip.style.display = "none";
+        }
+
+        window.onload = function() {
+            tooltip.init();
+        }
+    </script>
+
+    <div id="bgbox">
+        <div id="profbox">
+            <div class="profline"></div>
+            <div class="profnum">222.</div>
+            <div class="profpic">
+                <img src="https://i.ibb.co/b5JthvN/1.jpg" width="200">
+            </div>
+            <div class="profname">connie</div>
+            <div class="nameline"></div>
+
+            <div class="tabdet">
+                <section class="tabs">
+                    <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+                    <label for="tab-1" class="tab-label-1"><span style="font-weight:300">01.&nbsp; </span>data</label>
+
+                    <div class="clear-shadow"></div>
+
+                    <div class="content">
+                        <div class="content-1">
+                            <div class="container">
+                                <div class="holder">
+                                    <div class="spinner">
+                                        <div class="panel a"></div>
+                                        <div class="panel b"></div>
+                                        <div class="panel c"></div>
+                                        <div class="panel d"></div>
+                                        <div class="panel e"></div>
+                                        <div class="panel f"></div>
+                                        <div class="panel g"></div>
+                                        <div class="panel h"></div>
+                                        <div class="panel i"></div>
+                                        <div class="panel j"></div>
+                                        <div class="panel k"></div>
+                                        <div class="panel l"></div>
+                                        <div class="panel m"></div>
+                                        <div class="panel n"></div>
+                                        <div class="panel o"></div>
+                                        <div class="panel p"></div>
+                                        <div class="fade"></div>
+                                    </div>
+                                </div>
+                                <div class="pagination">
+                                    <button type="button" id="prev">&#8592;</button>
+                                    <button type="button" id="next">&#8594;</button>
+                                </div>
+                                <!-- partial -->
+                            </div>
+
+
+
+                        </div>
+                    </div>
+            </div>
+            <div class="profdiv"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+    <script src="./script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+    <script src="//glenthemes.github.io/-music-/glenplayer01.js"></script>
+    <link href="//glenthemes.github.io/-music-/glenplayer01.css" rel="stylesheet">
+
+    <style element="glenplayer01">
+         :root {
+            --MusicPlayer-Distance-From-Bottom: 30px;
+            --MusicPlayer-Frame-Thickness: 12px;
+            --MusicPlayer-Frame-Color: #df9e97;
+            --MusicPlayer-Frame-Transparency: 40%;
+            --MusicPlayer-Text-Background: #A6ACAF;
+            --MusicPlayer-Text-Padding: 12px;
+            --MusicPlayer-Text-Align: right;
+            --MusicPlayer-Text-TOP-Size: 10px;
+            --MusicPlayer-Text-TOP-Color: #000;
+            --MusicPlayer-Text-BOTTOM-Size: 10px;
+            --MusicPlayer-Text-BOTTOM-Color: #000;
+            --MusicPlayer-Circle-Size: 50px;
+            --MusicPlayer-Circle-Background: #A6ACAF;
+            --MusicPlayer-PlayButton-Size: 10px;
+            --MusicPlayer-PlayButton-Color: #000;
+            --MusicPlayer-Bar-Thickness: 2px;
+            --MusicPlayer-Bar-Spacing: 2px;
+            --MusicPlayer-Bar-Color: #000;
+            --MusicPlayer-SlideIn-Speed: 0.69s;
+            --MusicPlayer-SlideOut-Speed: 1s;
+        }
+    </style>
+
+    <div glenplayer01="" style="margin-left: -86.4062px; visibility: visible; opacity: 1;">
+        <div class="fryingpan"></div>
+        <div class="cereal">
+            <div class="gouache">
+                <div class="musictext">
+                    <div top-text="">X19X</div>
+                    <div bottom-text="">Feid</div>
+                </div>
+            </div>
+
+
+            <div class="circ">
+                <div class="macaroni"></div>
+                <div class="cheese">
+                    <!-- <div class="bartender">
+                        <div class="vodka"></div>
+                        <div class="vodka"></div>
+                        <div class="vodka"></div>
+                        <div class="vodka"></div>
+                        <div class="vodka"></div>
+                    </div> -->
+                </div>
+            </div><audio id="music-id" src="assets/nmyb.mp3"></audio>
+        </div>
+    </div>
+    </br>
+    <!-- partial -->
+
+</body>
+
+</html>
