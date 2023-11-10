@@ -155,33 +155,32 @@
 }
 
 .a {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/a.jpg);
 }
 
 .b {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/b.jpg);
 }
 
 .c {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/c.jpg);
 }
 
 .d {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/d.jpg);
 }
 
 .e {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/e.png);
 }
 
 .f {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/f.jpg);
 }
 
 .g {
-    background-image: url(assets/images.jpg);
+    background-image: url(assets/g.png);
 }
-
 
 div#qTip {
     font: 7px 'roboto';
